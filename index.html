@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice Comparator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Invoice Price Checker</h2>
+
+  <div class="main-container">
+    <div class="content-section">
+      <form>
+        <div class="form-section">
+          <label>Select Supplier:
+            <select id="supplier-select">
+              <option value="">-- Choose a Supplier --</option>
+              <option value="sysco">Sysco</option>
+              <option value="pfg">PFG</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <label>Upload Expected Prices CSV: <input type="file" id="expected-file" accept=".csv" /></label>
+        </div>
+
+        <div class="form-section">
+          <label>Upload Invoice CSV: <input type="file" id="invoice-file" accept=".csv" /></label>
+          <button id="compare-btn" type="button" disabled>Compare</button>
+        </div>
+      </form>
+
+      <div id="result-table"></div>
+    </div>
+
+    <div class="legend">
+      <h3>Key:</h3>
+      <div class="legend-item"><span class="legend-dot yellow"></span> Price mismatch</div>
+      <div class="legend-item"><span class="legend-dot orange"></span> Item mismatch</div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</body>
+</html>
