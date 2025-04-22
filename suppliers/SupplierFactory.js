@@ -1,7 +1,7 @@
-import { SyscoSupplier } from './SyscoSupplier.js';
-import { PFGSupplier } from './PFGSupplier.js';
+const { SyscoSupplier } = require('./SyscoSupplier');
+const { PFGSupplier } = require('./PFGSupplier');
 
-export class SupplierFactory {
+class SupplierFactory {
   static create(name) {
     switch (name.toLowerCase()) {
       case 'sysco':
@@ -13,3 +13,5 @@ export class SupplierFactory {
     }
   }
 }
+
+module.exports = SupplierFactory;
